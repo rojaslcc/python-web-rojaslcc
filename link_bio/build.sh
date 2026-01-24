@@ -1,7 +1,8 @@
+set -e
 source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
-reflex init
+rm -rf .web
 reflex export --frontend-only
 rm -rf public
 unzip frontend.zip -d public

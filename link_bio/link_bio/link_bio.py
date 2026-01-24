@@ -4,7 +4,7 @@ from link_bio.components.navbar import navbar
 from link_bio.components.footer import footer
 from link_bio.views.header.header import header
 from link_bio.views.links.links import links
-from link_bio.views.sponsors.sponsors import sponsors
+# from link_bio.views.sponsors.sponsors import sponsors
 from link_bio.styles.styles import Size
 
 
@@ -32,6 +32,8 @@ def index() -> rx.Component:
 
 
 app = rx.App(
+    overlay_component=rx.fragment(),
+    admin_dash=False,
     style=styles.BASE_STYLE,
     head_components=[
         rx.el.link(
@@ -64,5 +66,3 @@ app.add_page(
     description="Hola, mi nombre es H.R. Rangel, soy Lic. en Ciencias Computacionales y hago contenido de programación.",
     image="avatar.jpg"
 )
-
-app.compile()

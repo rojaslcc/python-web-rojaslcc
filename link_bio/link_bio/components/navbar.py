@@ -7,8 +7,8 @@ from link_bio.styles.colors import Color
 def navbar() -> rx.Component:
     return rx.hstack(
         rx.box(
-            rx.span("rojas", color=Color.PRIMARY.value),
-            rx.span("lcc", color=Color.SECONDARY.value),
+            rx.text("rojas", as_="span", color=Color.PRIMARY.value),
+            rx.text("lcc", as_="span", color=Color.SECONDARY.value),
             style=styles.navbar_title_style
         ),
         position="sticky",

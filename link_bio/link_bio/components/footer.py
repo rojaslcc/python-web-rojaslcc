@@ -1,7 +1,6 @@
 import reflex as rx
 import datetime
 import link_bio.constants as const
-import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size
 from link_bio.styles.colors import Color, TextColor
 
@@ -20,7 +19,7 @@ def footer() -> rx.Component:
         ),
         rx.link(
             rx.box(
-                rx.span("Amigable Developer H.R.", color=Color.PRIMARY.value),
+                rx.text("Amigable Developer H.R.", as_="span", color=Color.PRIMARY.value),
                 " v1.0.0",
             ),
             href=const.ROJASLCC_URL,
@@ -34,14 +33,16 @@ def footer() -> rx.Component:
         ),
         rx.box(
             f"LIFE IS GOOD, BUT IT CAN BE. ",
-            rx.span("|", color=Color.PRIMARY.value),
+            rx.text("|", as_="span", color=Color.PRIMARY.value),
             " NEVER WASTE GOOD TECH.",
             font_size=Size.SMEDIUM.value,
             margin_top=Size.ZERO.value
         ),
+        width="100%",
+        align_items="center",
         margin_bottom=Size.BIG.value,
         padding_bottom=Size.BIG.value,
         padding_x=Size.BIG.value,
-        spacing=Size.DEFAULT.value,
+        gap=Size.DEFAULT.value,
         color=TextColor.FOOTER.value
     )

@@ -24,15 +24,26 @@ class Size(Enum):
 
 
 BASE_STYLE = {
+    # Selecciona cualquier enlace que contenga reflex.dev en su URL
+    "a[href*='reflex.dev']": {
+        "display": "none !important",
+        "visibility": "hidden !important",
+        "opacity": "0 !important",
+        "pointer-events": "none !important",
+    },
+    # Selector adicional para el contenedor flotante típico de la 0.8.x
+    ".rt-Box[style*='position: fixed']": {
+            "display": "none !important" if "Reflex" in str(rx.fragment()) else "block", 
+    },
     "font_family": Font.DEFAULT.value,
     "font_weight": FontWeight.LIGHT.value,
     "background_color": Color.BACKGROUND.value,
-    rx.Heading: {
+    rx.heading: {
         "color": TextColor.HEADER.value,
         "font_family": Font.TITLE.value,
         "font_weight": FontWeight.MEDIUM.value
     },
-    rx.Button: {
+    rx.button: {
         "width": "100%",
         "height": "100%",
         "padding": Size.SMALL.value,
@@ -45,7 +56,7 @@ BASE_STYLE = {
             "background_color": Color.SECONDARY.value
         }
     },
-    rx.Link: {
+    rx.link: {
         "text_decoration": "none",
         "_hover": {}
     }
