@@ -7,7 +7,7 @@ Este es un proyecto web creado en Python que funciona como una página de "link 
 El proyecto está construido principalmente con las siguientes tecnologías:
 
 -   **Python**: Lenguaje de programación principal para el backend.
--   **Reflex**: Un framework de desarrollo web para Python (versión 0.3.6) que permite construir aplicaciones web completas en Python puro, generando un frontend en **Next.js**.
+-   **Reflex**: Un framework de desarrollo web para Python (versión 0.8.26) que permite construir aplicaciones web completas en Python puro, generando un frontend en **Next.js**.
 -   **Pydantic**: Utilizado para la validación de datos.
 
 ## Estructura de Carpetas
