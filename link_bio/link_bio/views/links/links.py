@@ -9,16 +9,22 @@ def links() -> rx.Component:
     return rx.vstack(
         title("Comunidad"),
         link_button(
-            "Facebook",
+            "RojasLCC Tutoriales y más",
             "Mi pagina de facebook principal.",
             "icons/facebook.svg",
             const.FACEBOOK_URL
         ),
         link_button(
-            "Facebook Bruddas Tech&Solutions",
-            "Proyecto de amigos para el desarrollo de aplicaciones/juegos/apps interactivas Mobile/Web/Desktop en modalidad freelance.",
+            "Bruddas Tech&Solutions",
+            "Proyecto de creacion de contenido digital sobre software y tecnología.",
             "icons/facebook.svg",
             const.FACEBOOK_BTS_URL
+        ),
+        link_button(
+            "Altos Interactive",
+            "Co-fundador de startup para el desarrollo de software.",
+            "icons/facebook.svg",
+            const.FACEBOOK_ALTOS_URL
         ),
         link_button(
             "Twitch",
@@ -27,20 +33,20 @@ def links() -> rx.Component:
             const.TWITCH_URL
         ),
         link_button(
-            "YouTube",
-            "Tutoriales sobre programación y vídeos sobre tecnología.",
-            "icons/youtube.svg",
-            const.YOUTUBE_URL
-        ),
-        link_button(
             "YouTube ⓘ canal personal",
             "Cuenta personal de contenido",
             "icons/youtube.svg",
             const.YOUTUBE_SECONDARY_URL
         ),
         link_button(
+            "YouTube ⓘ canal tutoriales",
+            "Tutoriales sobre programación y vídeos sobre tecnología.",
+            "icons/youtube.svg",
+            const.YOUTUBE_URL
+        ),
+        link_button(
             "YouTube ⓘ canal Bruddas Tech&Solutions",
-            "Proyecto de amigos para el generación de tutoriales y contenido de aplicaciones/juegos/apps interactivas Mobile/Web/Desktop y tecnología.",
+            "Hogar del pódcast BTS: Tecnología Hoy y más contenido sobre tecnología.",
             "icons/youtube.svg",
             const.YOUTUBE_BTS_URL
         ),

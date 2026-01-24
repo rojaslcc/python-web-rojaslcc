@@ -13,6 +13,7 @@ YOUTUBE_SECONDARY_URL = "https://www.youtube.com/channel/UCjnVv-UB3ofo4VO33AmohZ
 YOUTUBE_BTS_URL = "https://www.youtube.com/@bruddastech"
 FACEBOOK_URL = "https://www.facebook.com/rojaslcc91"
 FACEBOOK_BTS_URL = "https://www.facebook.com/bts.sw"
+FACEBOOK_ALTOS_URL = "https://www.facebook.com/altosinteractive"
 
 # Recursos y más
 ROJASLCC_URL = "https://rojaslcc.com"

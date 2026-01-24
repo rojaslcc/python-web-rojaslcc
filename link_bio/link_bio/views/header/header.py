@@ -10,19 +10,19 @@ from link_bio.components.info_text import info_text
 def header() -> rx.Component:
     return rx.vstack(
         rx.hstack(
-            rx.avatar(
-                name="Humberto Rojas",
-                size="xl",
+            rx.image(
                 src="avatar.jpg",
-                color=TextColor.BODY.value,
-                bg=Color.CONTENT.value,
+                alt="H.R. Rangel",
+                width="6.5em",
+                height="6.5em",
+                border_radius="50%",
                 padding="2px",
                 border="4px",
                 border_color=Color.PRIMARY.value
             ),
             rx.vstack(
                 rx.heading(
-                    "Humberto Rojas (H.R.)",
+                    "H.R. Rangel",
                     size="lg"
                 ),
                 rx.text(
@@ -78,7 +78,7 @@ def header() -> rx.Component:
             ),
             rx.spacer(),
             info_text(
-                "100+", "seguidores en instagram"
+                "8K+", "seguidores en instagram"
             ),
             width="100%"
         ),

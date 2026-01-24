@@ -20,8 +20,8 @@ def footer() -> rx.Component:
         ),
         rx.link(
             rx.box(
-                rx.span("RojasLCC by Humberto Rojas", color=Color.PRIMARY.value),
-                " v1."
+                rx.span("Amigable Developer H.R.", color=Color.PRIMARY.value),
+                " v1.0.0",
             ),
             href=const.ROJASLCC_URL,
             is_external=True,

@@ -1,7 +1,10 @@
 *.db
 *.py[cod]
-.env
+*.zip
+.env/
 .venv/
-.web
-__pycache__/
+venv/
 .vscode
+.web/
+__pycache__/
+public/

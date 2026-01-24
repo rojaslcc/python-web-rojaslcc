@@ -49,8 +49,8 @@ gtag('config', 'G-3YGHT3XJFS');
 
 app.add_page(
     index,
-    title="RojasLCC | Tu Amigable Developer H.R.",
-    description="Hola, mi nombre es Humberto Rojas, soy Lic. en Ciencias Computacionales y hago contenido de programación.",
+    title="Amigable Developer H.R.",
+    description="Hola, mi nombre es H.R. Rangel, soy Lic. en Ciencias Computacionales y hago contenido de programación.",
     image="avatar.jpg"
 )
 
