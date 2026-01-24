@@ -6,12 +6,8 @@ from .fonts import Font, FontWeight
 # Constants
 MAX_WIDTH = "560px"
 
-# Sizes
 
-STYLESHEETS = [
-    "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap",
-    "https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap"
-]
+# Sizes
 
 
 class Size(Enum):

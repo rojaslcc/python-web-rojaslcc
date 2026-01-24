@@ -3,8 +3,9 @@
 *.zip
 .env/
 .venv/
-venv/
 .vscode
+.web
 .web/
 __pycache__/
 public/
+venv/

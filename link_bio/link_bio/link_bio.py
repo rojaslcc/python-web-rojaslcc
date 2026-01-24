@@ -32,9 +32,20 @@ def index() -> rx.Component:
 
 
 app = rx.App(
-    stylesheets=styles.STYLESHEETS,
     style=styles.BASE_STYLE,
     head_components=[
+        rx.el.link(
+            rel="shortcut icon",
+            href="favicon.ico"
+        ),
+        rx.el.link(
+            rel="stylesheet",
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
+        ),
+        rx.el.link(
+            rel="stylesheet",
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap"
+        ),
         rx.script(src="https://www.googletagmanager.com/gtag/js?id=G-3YGHT3XJFS"),
         rx.script(
             """
