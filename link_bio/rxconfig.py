@@ -5,4 +5,5 @@ config = rx.Config(
     cors_allowed_origins=["*"],
     disable_plugins=["reflex.plugins.sitemap.SitemapPlugin"],
     strict_mode=False,
+    api_url="https://rojaslcc.onrender.com"
 )

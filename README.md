@@ -82,7 +82,7 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
 ## Proceso de Build para Producción
 
-Si deseas generar los archivos estáticos del frontend para un despliegue en producción (sin necesidad de ejecutar el backend de Python), puedes usar el script `build.sh`.
+Si deseas generar los archivos estáticos del frontend para un despliegue en producción, puedes usar el script `build.sh`.
 
 ```bash
 ./build.sh
@@ -94,3 +94,28 @@ Este script realizará los siguientes pasos:
 3.  Inicializa Reflex.
 4.  Exporta el frontend (`reflex export --frontend-only`).
 5.  Descomprime los archivos generados en la carpeta `public/`.
+
+> **⚠️ Nota Importante:** Reflex no es un sitio estático puro. Requiere obligatoriamente un backend de Python en ejecución para gestionar la conexión WebSocket. Si solo subes el frontend a Netlify sin el backend, obtendrás errores de conexión.
+
+## Guía de Despliegue (Frontend + Backend)
+
+Para producción, la arquitectura se divide en dos partes:
+
+### 1. Backend (Render)
+
+El backend se encarga de la lógica y el estado. Se despliega usando **Docker**.
+
+1.  Sube tu código a GitHub.
+2.  En Render, crea un **Web Service**.
+3.  Conecta tu repositorio y configura:
+    *   **Root Directory:** `link_bio`
+    *   **Runtime:** Docker
+4.  Una vez desplegado, copia la URL asignada (ej: `https://rojaslcc.onrender.com`).
+
+### 2. Frontend (Netlify)
+
+El frontend es la parte visual que se conecta al backend.
+
+1.  Asegúrate de configurar la `api_url` en `rxconfig.py` apuntando a tu backend de Render.
+2.  Ejecuta `./build.sh` en tu máquina local.
+3.  Sube el contenido de la carpeta `public/` generada a **Netlify**.

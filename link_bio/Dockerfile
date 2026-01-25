@@ -16,5 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar el código de la aplicación
 COPY . .
 
+# Exponer el puerto 8000 para que Render sepa dónde escuchar
+EXPOSE 8000
+
 # Comando para iniciar solo el backend en producción
 CMD ["reflex", "run", "--env", "prod", "--backend-only"]
