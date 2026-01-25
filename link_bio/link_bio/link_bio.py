@@ -32,8 +32,6 @@ def index() -> rx.Component:
 
 
 app = rx.App(
-    overlay_component=rx.fragment(),
-    admin_dash=False,
     style=styles.BASE_STYLE,
     head_components=[
         rx.el.link(

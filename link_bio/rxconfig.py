@@ -4,4 +4,5 @@ config = rx.Config(
     app_name="link_bio",
     cors_allowed_origins=["*"],
     disable_plugins=["reflex.plugins.sitemap.SitemapPlugin"],
+    strict_mode=False,
 )
