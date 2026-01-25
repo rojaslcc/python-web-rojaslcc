@@ -24,6 +24,10 @@ class Size(Enum):
 
 
 BASE_STYLE = {
+    "body": {
+        "margin": "0",
+        "padding": "0",
+    },
     # Selecciona cualquier enlace que contenga reflex.dev en su URL
     "a[href*='reflex.dev']": {
         "display": "none !important",

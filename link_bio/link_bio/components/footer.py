@@ -40,7 +40,6 @@ def footer() -> rx.Component:
         ),
         width="100%",
         align_items="center",
-        margin_bottom=Size.BIG.value,
         padding_bottom=Size.BIG.value,
         padding_x=Size.BIG.value,
         gap=Size.DEFAULT.value,

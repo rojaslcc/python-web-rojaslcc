@@ -27,12 +27,19 @@ def index() -> rx.Component:
                 padding=Size.BIG.value
             )
         ),
-        footer()
+        footer(),
+        width="100%",
+        min_height="100vh", # Asegura que cubra al menos toda la altura de la ventana
+        padding="0"
     )
 
+# Configuración de estilos globales para eliminar márgenes por defecto
+style = styles.BASE_STYLE
+style.setdefault("html", {}).update({"margin": "0", "padding": "0"})
+style.setdefault("body", {}).update({"margin": "0", "padding": "0", "box_sizing": "border-box"})
 
 app = rx.App(
-    style=styles.BASE_STYLE,
+    style=style,
     head_components=[
         rx.el.link(
             rel="shortcut icon",
