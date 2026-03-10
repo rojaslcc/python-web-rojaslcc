@@ -53,9 +53,9 @@ def header() -> rx.Component:
                         "TikTok"
                     ),
                     link_icon(
-                        "icons/spotify.svg",
-                        const.SPOTIFY_URL,
-                        "Spotify"
+                        "icons/apple_music.svg",
+                        const.APPLEMUSIC_URL,
+                        "Apple Music"
                     ),
                     link_icon(
                         "icons/linkedin.svg",

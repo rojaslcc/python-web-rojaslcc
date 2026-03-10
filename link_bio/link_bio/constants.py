@@ -3,7 +3,7 @@ GITHUB_URL = "https://github.com/rojaslcc"
 TWITTER_X_URL = "https://x.com/rojaslcc"
 INSTAGRAM_URL = "https://instagram.com/rojaslcc"
 TIKTOK_URL = "https://tiktok.com/@rojaslcc"
-SPOTIFY_URL = "https://open.spotify.com/playlist/3bHvQ9DMASjBrfCwPnoH9T"
+APPLEMUSIC_URL = "https://music.apple.com/mx/playlist/rolas-pa-programar-chidori/pl.u-XkD04oLt23NeJ9?l=en"
 LINKEDIN_URL = "https://linkedin.com/in/rojaslcc"
 
 # Comunidad
