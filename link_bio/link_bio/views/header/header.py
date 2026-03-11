@@ -1,7 +1,5 @@
 import reflex as rx
 import datetime
-import requests
-from bs4 import BeautifulSoup
 import json
 import link_bio.constants as const
 from link_bio.styles.styles import Size

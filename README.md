@@ -80,6 +80,18 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
     La aplicación estará disponible en `http://localhost:3000`. El servidor se recargará automáticamente al detectar cambios en el código.
 
+## Actualización de Datos Dinámicos (Seguidores)
+
+El contador de seguidores de Instagram se obtiene de forma manual para asegurar la estabilidad del build. Antes de hacer un `commit` y `push` con tus cambios, ejecuta el siguiente script para actualizar el contador:
+
+```bash
+# Asegúrate de estar en el directorio link_bio/
+python update_followers.py
+```
+
+Esto modificará el archivo `data.json`. Asegúrate de incluir este archivo en tu commit para que los cambios se reflejen en producción.
+
+
 ## Proceso de Build para Producción
 
 Si deseas generar los archivos estáticos del frontend para un despliegue en producción, puedes usar el script `build.sh`.

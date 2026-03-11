@@ -11,21 +11,30 @@ def get_instagram_followers(username: str) -> str:
         url = f"https://www.instagram.com/{username}/"
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
             "Accept-Language": "es-ES,es;q=0.9",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "none",
+            "Sec-Fetch-User": "?1",
+            "Upgrade-Insecure-Requests": "1",
         }
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
 
         soup = BeautifulSoup(response.text, 'html.parser')
+
         meta_tag = soup.find('meta', property="og:description")
 
         if meta_tag and 'content' in meta_tag.attrs:
             content = meta_tag.attrs['content']
-            followers = content.split(' ')[0]
+            followers = content.split(' ')[0]  # Extrae el número de seguidores
             return followers
+
     except Exception as e:
         print(f"Error al obtener seguidores de Instagram: {e}")
-    return None
+
+    return "N/A"
 
 if __name__ == "__main__":
     print("Actualizando contador de seguidores de Instagram...")
