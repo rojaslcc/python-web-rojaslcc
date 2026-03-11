@@ -1,6 +1,7 @@
 import reflex as rx
 import link_bio.styles.styles as styles
 from link_bio.components.navbar import navbar
+from link_bio.components.cover import cover
 from link_bio.components.footer import footer
 from link_bio.views.header.header import header
 from link_bio.views.links.links import links
@@ -18,6 +19,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
+                cover("cover.png"),
                 header(),
                 links(),
                 #sponsors(),
