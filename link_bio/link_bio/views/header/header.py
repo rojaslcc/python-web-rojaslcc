@@ -2,6 +2,7 @@ import reflex as rx
 import datetime
 import requests
 from bs4 import BeautifulSoup
+import json
 import link_bio.constants as const
 from link_bio.styles.styles import Size
 from link_bio.styles.colors import Color, TextColor
@@ -9,36 +10,14 @@ from link_bio.components.link_icon import link_icon
 from link_bio.components.info_text import info_text
 
 
-class HeaderState(rx.State):
-    """State for the header component."""
-    instagram_followers: str = "..."
-
-    def load_followers(self):
-        """Load Instagram followers from scraping."""
-        try:
-            username = "rojaslcc"
-            url = f"https://www.instagram.com/{username}/"
-            headers = {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                "Accept-Language": "es-ES,es;q=0.9",
-            }
-            # Use a timeout to prevent the backend from hanging
-            response = requests.get(url, headers=headers, timeout=5)
-            response.raise_for_status()
-
-            soup = BeautifulSoup(response.text, 'html.parser')
-            meta_tag = soup.find('meta', property="og:description")
-
-            if meta_tag and 'content' in meta_tag.attrs:
-                content = meta_tag.attrs['content']
-                followers = content.split(' ')[0]
-                self.instagram_followers = followers
-                return
-        except Exception as e:
-            print(f"Error fetching Instagram followers: {e}")
-        
-        # If it fails for any reason, set to N/A
-        self.instagram_followers = "N/A"
+def get_cached_data() -> dict:
+    """Lee los datos cacheados desde el archivo JSON."""
+    try:
+        # `reflex` se ejecuta desde el directorio raíz del proyecto (`link_bio/`)
+        with open("data.json", "r") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {"instagram_followers": "N/A"}
 
 
 def experience() -> int:
@@ -48,6 +27,9 @@ def experience() -> int:
 
 def header() -> rx.Component:
     """The header component for the page."""
+    cached_data = get_cached_data()
+    instagram_followers = cached_data.get("instagram_followers", "N/A")
+
     return rx.vstack(
         rx.hstack(
             rx.image(
@@ -119,7 +101,7 @@ def header() -> rx.Component:
             ),
             rx.spacer(),
             info_text(
-                HeaderState.instagram_followers, "seguidores en instagram"
+                instagram_followers, "seguidores en instagram"
             ),
             width="100%"
         ),
@@ -134,6 +116,5 @@ def header() -> rx.Component:
             text_align="justify"
         ),
         gap=Size.BIG.value,
-        align_items="start",
-        on_mount=HeaderState.load_followers
+        align_items="start"
     )
