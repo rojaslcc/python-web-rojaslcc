@@ -1,52 +1,53 @@
 import reflex as rx
 import datetime
+import requests
+from bs4 import BeautifulSoup
 import link_bio.constants as const
 from link_bio.styles.styles import Size
 from link_bio.styles.colors import Color, TextColor
 from link_bio.components.link_icon import link_icon
 from link_bio.components.info_text import info_text
-import requests
-from bs4 import BeautifulSoup
 
 
-def get_instagram_followers(username: str) -> str:
-    try:
-        url = f"https://www.instagram.com/{username}/"
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-            "Accept-Language": "es-ES,es;q=0.9",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "none",
-            "Sec-Fetch-User": "?1",
-            "Upgrade-Insecure-Requests": "1",
-        }
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
+class HeaderState(rx.State):
+    """State for the header component."""
+    instagram_followers: str = "..."
 
-        soup = BeautifulSoup(response.text, 'html.parser')
+    def load_followers(self):
+        """Load Instagram followers from scraping."""
+        try:
+            username = "rojaslcc"
+            url = f"https://www.instagram.com/{username}/"
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                "Accept-Language": "es-ES,es;q=0.9",
+            }
+            # Use a timeout to prevent the backend from hanging
+            response = requests.get(url, headers=headers, timeout=5)
+            response.raise_for_status()
 
-        meta_tag = soup.find('meta', property="og:description")
+            soup = BeautifulSoup(response.text, 'html.parser')
+            meta_tag = soup.find('meta', property="og:description")
 
-        if meta_tag and 'content' in meta_tag.attrs:
-            content = meta_tag.attrs['content']
-            followers = content.split(' ')[0]  # Extrae el número de seguidores
-            return followers
-
-    except Exception as e:
-        print(f"Error al obtener seguidores de Instagram: {e}")
-
-    return "N/A"
+            if meta_tag and 'content' in meta_tag.attrs:
+                content = meta_tag.attrs['content']
+                followers = content.split(' ')[0]
+                self.instagram_followers = followers
+                return
+        except Exception as e:
+            print(f"Error fetching Instagram followers: {e}")
+        
+        # If it fails for any reason, set to N/A
+        self.instagram_followers = "N/A"
 
 
 def experience() -> int:
+    """Calculates years of experience."""
     return datetime.date.today().year - 2014
 
 
 def header() -> rx.Component:
-    instagram_followers = get_instagram_followers("rojaslcc")
-
+    """The header component for the page."""
     return rx.vstack(
         rx.hstack(
             rx.image(
@@ -118,7 +119,7 @@ def header() -> rx.Component:
             ),
             rx.spacer(),
             info_text(
-                f"{instagram_followers}", "seguidores en instagram"
+                HeaderState.instagram_followers, "seguidores en instagram"
             ),
             width="100%"
         ),
@@ -133,5 +134,6 @@ def header() -> rx.Component:
             text_align="justify"
         ),
         gap=Size.BIG.value,
-        align_items="start"
+        align_items="start",
+        on_mount=HeaderState.load_followers
     )
