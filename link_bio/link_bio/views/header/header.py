@@ -51,7 +51,7 @@ def header() -> rx.Component:
         rx.hstack(
             rx.image(
                 src="avatar.jpg",
-                alt="H.R. Rangel",
+                alt="H.R. Rangel (TEST)",
                 width="6.5em",
                 height="6.5em",
                 border_radius="50%",
