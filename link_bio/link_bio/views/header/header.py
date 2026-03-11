@@ -62,7 +62,7 @@ def header() -> rx.Component:
             ),
             rx.vstack(
                 rx.heading(
-                    "H.R. Rangel (TEST)",
+                    "H.R. Rangel",
                     size="7"
                 ),
                 rx.text(
