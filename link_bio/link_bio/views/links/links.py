@@ -7,6 +7,13 @@ from link_bio.styles.styles import Size
 
 def links() -> rx.Component:
     return rx.vstack(
+        title("Lo nuevo"),
+        link_button(
+            "Sitio web de Altos Interactive",
+            "Desarrollo de software y soluciones digitales.",
+            "icons/web.svg",
+            const.ALTOSINTERACTIVEWEB_URL
+        ),
         title("Comunidad"),
         link_button(
             "RojasLCC Tutoriales y más",
