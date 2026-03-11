@@ -26,8 +26,10 @@ La estructura del proyecto está organizada de la siguiente manera:
 │   ├── public/             # Contenido del frontend generado para producción
 │   ├── venv/               # Entorno virtual de Python
 │   ├── build.sh            # Script para construir el frontend
+│   ├── data.json           # Archivo JSON que contiene datos estáticos
 │   ├── requirements.txt    # Dependencias de Python
-│   └── rxconfig.py         # Configuración de la aplicación Reflex
+│   ├── rxconfig.py         # Configuración de la aplicación Reflex
+│   └── update_followers.py # Script para actualizar el contador de seguidores
 └── README.md               # Este archivo
 ```
 
