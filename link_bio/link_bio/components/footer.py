@@ -3,6 +3,8 @@ import datetime
 import link_bio.constants as const
 from link_bio.styles.styles import Size
 from link_bio.styles.colors import Color, TextColor
+from link_bio.state.page_state import PageState
+from link_bio.i18n import Trans
 
 
 def footer() -> rx.Component:
@@ -14,12 +16,12 @@ def footer() -> rx.Component:
             alt="Logotipo de RojasLCC. Una \"erre\"."
         ),
         rx.text(
-            f"© 2014-{datetime.date.today().year}",
+            f"{PageState.i18n[Trans.FOOTER_RIGHTS]}{datetime.date.today().year}",
             font_size=Size.MEDIUM.value
         ),
         rx.link(
             rx.box(
-                rx.text("Amigable Developer H.R.", as_="span", color=Color.PRIMARY.value),
+                rx.text(PageState.i18n[Trans.FOOTER_SUBTITLE], as_="span", color=Color.PRIMARY.value),
                 " v1.0.0",
             ),
             href=const.ROJASLCC_URL,

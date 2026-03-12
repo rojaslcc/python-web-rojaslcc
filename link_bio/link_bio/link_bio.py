@@ -6,6 +6,7 @@ from link_bio.components.footer import footer
 from link_bio.views.header.header import header
 from link_bio.views.links.links import links
 # from link_bio.views.sponsors.sponsors import sponsors
+from link_bio.state.page_state import PageState
 from link_bio.styles.styles import Size
 
 
@@ -32,13 +33,15 @@ def index() -> rx.Component:
         footer(),
         width="100%",
         min_height="100vh", # Asegura que cubra al menos toda la altura de la ventana
-        padding="0"
+        padding="0",
+        overflow_x="hidden"
     )
 
 # Configuración de estilos globales para eliminar márgenes por defecto
 style = styles.BASE_STYLE
 style.setdefault("html", {}).update({"margin": "0", "padding": "0"})
-style.setdefault("body", {}).update({"margin": "0", "padding": "0", "box_sizing": "border-box"})
+style.setdefault("body", {}).update({"margin": "0", "padding": "0"})
+style.setdefault("*", {}).update({"box_sizing": "border-box"})
 
 app = rx.App(
     style=style,

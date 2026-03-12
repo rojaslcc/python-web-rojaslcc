@@ -6,6 +6,8 @@ from link_bio.styles.styles import Size
 from link_bio.styles.colors import Color, TextColor
 from link_bio.components.link_icon import link_icon
 from link_bio.components.info_text import info_text
+from link_bio.state.page_state import PageState
+from link_bio.i18n import Trans
 
 
 def get_cached_data() -> dict:
@@ -91,24 +93,20 @@ def header() -> rx.Component:
         rx.flex(
             info_text(
                 f"{experience()}+",
-                "años de experiencia"
+                PageState.i18n[Trans.HEADER_EXP]
             ),
             rx.spacer(),
             info_text(
-                "2+", "aplicaciones públicas creadas"
+                "2+", PageState.i18n[Trans.HEADER_APPS]
             ),
             rx.spacer(),
             info_text(
-                instagram_followers, "seguidores en instagram"
+                instagram_followers, PageState.i18n[Trans.HEADER_FOLLOWERS]
             ),
             width="100%"
         ),
         rx.text(
-            f"""
-            Soy licenciado en ciencias computacionales y actualmente trabajo para Banregio como analista programador Sr. 
-            Además, creo contenido sobre programación y tecnología en general en redes sociales. 
-            Aquí podrás encontrar todos mis enlaces de interés ¡Bienvenid@!
-            """,
+            PageState.i18n[Trans.HEADER_BIO],
             font_size=Size.DEFAULT.value,
             color=TextColor.BODY.value,
             text_align="justify"

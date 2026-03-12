@@ -17,6 +17,7 @@ class Size(Enum):
     MEDIUM = "0.8em"
     DEFAULT = "1em"
     LARGE = "1.5em"
+    VERY_LARGE = "1.8em"
     BIG = "2em"
     VERY_BIG = "4em"
     HUGE = "8em"
