@@ -30,13 +30,13 @@ def links() -> rx.Component:
             const.FACEBOOK_BTS_URL
         ),
         link_button(
-            "Altos Interactive",
-            "Co-fundador de startup para el desarrollo de software.",
+            PageState.i18n[Trans.LINK_ALTOS_TITLE],
+            PageState.i18n[Trans.LINK_ALTOS_FB_BODY],
             "icons/facebook.svg",
             const.FACEBOOK_ALTOS_URL
         ),
         link_button(
-            "Twitch",
+            PageState.i18n[Trans.LINK_TWITCH_TITLE],
             PageState.i18n[Trans.LINK_TWITCH_BODY],
             "icons/twitch.svg",
             const.TWITCH_URL
@@ -54,47 +54,47 @@ def links() -> rx.Component:
             const.YOUTUBE_URL
         ),
         link_button(
-            "YouTube ⓘ canal Bruddas Tech&Solutions",
-            "Hogar del pódcast BTS: Tecnología Hoy y más contenido sobre tecnología.",
+            PageState.i18n[Trans.LINK_BTS_YT],
+            PageState.i18n[Trans.LINK_BTS_YT_BODY],
             "icons/youtube.svg",
             const.YOUTUBE_BTS_URL
         ),
 
         title(PageState.i18n[Trans.TITLE_RESOURCES]),
         link_button(
-            "Blog",
+            PageState.i18n[Trans.LINK_BLOG_TITLE],
             PageState.i18n[Trans.LINK_BLOG_BODY],
             "icons/wordpress.svg",
             const.WORDPRESS_URL
         ),
         link_button(
-            "Proyecto: App Android e-UANL Campus Digital",
-            "Conoce la app nativa que desarrollé con Kotlin en sus primeras versiones para mi alma mater la U.A.N.L.",
+            PageState.i18n[Trans.LINK_EUANL_TITLE],
+            PageState.i18n[Trans.LINK_EUANL_BODY],
             "icons/android.svg",
             const.EUANL_URL
         ),
         link_button(
-            "Proyecto: App Web CLIPSI UANL",
-            "Conoce la app web que desarrollé con ASP.NET Core en sus primeras versiones para la Facultad de Psicología mi alma mater la U.A.N.L.",
+            PageState.i18n[Trans.LINK_CLIPSI_TITLE],
+            PageState.i18n[Trans.LINK_CLIPSI_BODY],
             "icons/microsoft.svg",
             const.CLIPSI_URL
         ),
         link_button(
-            "In Development: POKÉDEX",
-            "Un proyecto que hice en VueJS para el bootcamp LAUNCHX de Microsoft y que buscaré mejorar.",
+            PageState.i18n[Trans.LINK_POKEDEX_TITLE],
+            PageState.i18n[Trans.LINK_POKEDEX_BODY],
             "icons/vuejs.svg",
             const.MYPOKEDEX_URL
         ),
         link_button(
-            "Ejercicio: App Web MiPasteleria",
-            "Un proyecto que hice en ASP.NET Core para el bootcamp LAUNCHX de Microsoft se buscaba practicar el HTML y CSS.",
+            PageState.i18n[Trans.LINK_MIPASTELERIA_TITLE],
+            PageState.i18n[Trans.LINK_MIPASTELERIA_BODY],
             "icons/microsoft.svg",
             const.MIPASTELERIA_URL
         ),
 
         title(PageState.i18n[Trans.TITLE_CONTACT]),
         link_button(
-            "e-Mail",
+            PageState.i18n[Trans.LINK_EMAIL_TITLE],
             const.EMAIL,
             "icons/email.svg",
             f"mailto:{const.EMAIL}"
