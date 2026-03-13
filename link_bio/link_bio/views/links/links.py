@@ -16,6 +16,13 @@ def links() -> rx.Component:
             "icons/web.svg",
             const.ALTOSINTERACTIVEWEB_URL
         ),
+        link_button(
+            PageState.i18n[Trans.LINK_BTSTH_PDOCASTDELASEMANA_YT],
+            PageState.i18n[Trans.LINK_BTSTH_PDOCASTDELASEMANA_YT_BODY],
+            "icons/youtube.svg",
+            const.YOUTUBE_BTSTH_PDOCASTDELASEMANA_URL
+        ),
+
         title(PageState.i18n[Trans.TITLE_COMMUNITY]),
         link_button(
             PageState.i18n[Trans.LINK_ROJAS_FB],

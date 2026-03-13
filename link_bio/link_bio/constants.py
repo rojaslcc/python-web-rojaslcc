@@ -6,6 +6,10 @@ TIKTOK_URL = "https://tiktok.com/@rojaslcc"
 APPLEMUSIC_URL = "https://music.apple.com/mx/playlist/rolas-pa-programar-chidori/pl.u-XkD04oLt23NeJ9?l=en"
 LINKEDIN_URL = "https://linkedin.com/in/rojaslcc"
 
+# Lo nuevo
+ALTOSINTERACTIVEWEB_URL = "https://altosinteractive.com"
+YOUTUBE_BTSTH_PDOCASTDELASEMANA_URL = "https://www.youtube.com/watch?v=caKfz3ia5ZM"
+
 # Comunidad
 TWITCH_URL = "https://twitch.tv/rojaslcc"
 YOUTUBE_URL = "https://youtube.com/@rojaslcc"
@@ -14,7 +18,6 @@ YOUTUBE_BTS_URL = "https://www.youtube.com/@bruddastech"
 FACEBOOK_URL = "https://www.facebook.com/rojaslcc91"
 FACEBOOK_BTS_URL = "https://www.facebook.com/bts.sw"
 FACEBOOK_ALTOS_URL = "https://www.facebook.com/altosinteractive"
-ALTOSINTERACTIVEWEB_URL = "https://altosinteractive.com"
 
 # Recursos y más
 ROJASLCC_URL = "https://rojaslcc.com"

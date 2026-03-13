@@ -28,6 +28,8 @@ class Trans:
     LINK_BLOG_BODY = "link_blog_body"
     LINK_BTS_YT = "link_bts_yt"
     LINK_BTS_YT_BODY = "link_bts_yt_body"
+    LINK_BTSTH_PDOCASTDELASEMANA_YT = "link_btsth_pdocastdelasemana_yt"
+    LINK_BTSTH_PDOCASTDELASEMANA_YT_BODY = "link_btsth_pdocastdelasemana_yt_body"
     
     LINK_ALTOS_TITLE = "link_altos_title"
     LINK_TWITCH_TITLE = "link_twitch_title"
@@ -58,6 +60,8 @@ translations = {
         "title_contact": "Contacto",
         "link_altos_web": "Sitio web de Altos Interactive",
         "link_altos_body": "Desarrollo de software y soluciones digitales.",
+        "link_btsth_pdocastdelasemana_yt": "Pódcast \"Bruddas Tech&Solutions: Tecnología Hoy\" ⓘ capítulo de la semana (2026-03-08)",
+        "link_btsth_pdocastdelasemana_yt_body": "Cuadragésimo octavo capítulo de nuestro Pódcast. Acompáñanos con el tema \"Programador precavido, programador que se especializa en IA\".",
         "link_altos_fb_body": "Co-fundador de startup para el desarrollo de software.",
         "link_rojas_fb": "RojasLCC Tutoriales y más",
         "link_rojas_body": "Mi pagina de facebook principal.",
@@ -98,6 +102,8 @@ translations = {
         "link_altos_web": "Altos Interactive Website",
         "link_altos_body": "Software development and digital solutions.",
         "link_altos_fb_body": "Co-founder of a startup for software development.",
+        "link_btsth_pdocastdelasemana_yt": "Podcast \"Bruddas Tech&Solutions: Technology Today\" ⓘ episode of the week (2026-03-08)",
+        "link_btsth_pdocastdelasemana_yt_body": "Forty-eighth episode of our Podcast. Join us with the topic \"Cautious programmer, programmer specializing in AI\".",
         "link_rojas_fb": "RojasLCC Tutorials & more",
         "link_rojas_body": "My main Facebook page.",
         "link_bruddas": "Bruddas Tech&Solutions",
