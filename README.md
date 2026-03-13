@@ -133,3 +133,7 @@ El frontend es la parte visual que se conecta al backend.
 1.  Asegúrate de configurar la `api_url` en `rxconfig.py` apuntando a tu backend de Render.
 2.  Ejecuta `./build.sh` en tu máquina local.
 3.  Sube el contenido de la carpeta `public/` generada a **Netlify**.
+
+## Protección rama main
+
+Por la automatizacion de GitHub Actions para publicar el sitio, no es posible hacer push directamente a la rama main. Pero eres libre de crear un fork y reutiliza el repo para crear tu propio proyecto basado en este repositorio.
