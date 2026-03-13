@@ -136,4 +136,4 @@ El frontend es la parte visual que se conecta al backend.
 
 ## Protección rama main
 
-Por la automatizacion de GitHub Actions para publicar el sitio, no es posible hacer push directamente a la rama main. Pero eres libre de crear un fork y reutiliza el repositorio para crear tu propio proyecto basado en este repositorio.
+Por la automatizacion de GitHub Actions para publicar el sitio, no es posible hacer push directamente a la rama main. Pero eres libre de crear un fork y reutiliza el código para crear tu propio proyecto basado en este repositorio.
