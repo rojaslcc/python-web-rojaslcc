@@ -8,7 +8,7 @@ LINKEDIN_URL = "https://linkedin.com/in/rojaslcc"
 
 # Lo nuevo
 ALTOSINTERACTIVEWEB_URL = "https://altosinteractive.com"
-YOUTUBE_BTSTH_PDOCASTDELASEMANA_URL = "https://www.youtube.com/watch?v=caKfz3ia5ZM"
+YOUTUBE_BTSTH_PDOCASTDELASEMANA_URL = "https://www.youtube.com/watch?v=FVlvA-RPJwA"
 
 # Comunidad
 TWITCH_URL = "https://twitch.tv/rojaslcc"
