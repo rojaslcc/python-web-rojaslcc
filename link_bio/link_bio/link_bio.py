@@ -5,7 +5,7 @@ from link_bio.components.cover import cover
 from link_bio.components.footer import footer
 from link_bio.views.header.header import header
 from link_bio.views.links.links import links
-# from link_bio.views.sponsors.sponsors import sponsors
+from link_bio.views.sponsors.sponsors import sponsors
 from link_bio.state.page_state import PageState
 from link_bio.styles.styles import Size
 
@@ -23,7 +23,7 @@ def index() -> rx.Component:
                 cover("cover.png"),
                 header(),
                 links(),
-                #sponsors(),
+                sponsors(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value,

@@ -11,6 +11,7 @@ class Trans:
     TITLE_COMMUNITY = "title_community"
     TITLE_RESOURCES = "title_resources"
     TITLE_CONTACT = "title_contact"
+    TITLE_MY_TECH_STACK = "title_tech_stack"
     
     # Links (Ejemplos representativos)
     LINK_ALTOS_WEB = "link_altos_web"
@@ -89,6 +90,7 @@ translations = {
         "link_email_title": "e-Mail",
         "footer_rights": "© 2014-",
         "footer_subtitle": "Amigable Developer H.R.",
+        "title_tech_stack": "Mi Stack Tech",
     },
     "en": {
         "header_exp": "years of experience",
@@ -130,5 +132,6 @@ translations = {
         "link_email_title": "e-Mail",
         "footer_rights": "© 2014-",
         "footer_subtitle": "Friendly Developer H.R.",
+        "title_tech_stack": "My Tech Stack",
     }
 }

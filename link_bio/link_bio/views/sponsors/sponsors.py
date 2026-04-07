@@ -3,26 +3,43 @@ import link_bio.constants as const
 from link_bio.styles.styles import Size
 from link_bio.components.title import title
 from link_bio.components.link_sponsor import link_sponsor
+from link_bio.state.page_state import PageState
+from link_bio.i18n import Trans
 
 
 def sponsors() -> rx.Component:
     return rx.vstack(
-        title("Colaboran"),
-        rx.responsive_grid(
+        title(PageState.i18n[Trans.TITLE_MY_TECH_STACK]),
+        rx.grid(
             link_sponsor(
-                "elgato.png",
-                const.ELGATO_URL,
-                "Logotipo de Elgato"
+                "/stack/android.svg",
+                const.SIN_URL,
+                "Logotipo de Android"
             ),
             link_sponsor(
-                "mvp.png",
-                const.MVP_URL,
-                "Logotipo de Microsoft MVP"
+                "/stack/java.svg",
+                const.SIN_URL,
+                "Logotipo de Java"
             ),
-            spacing=Size.BIG.value,
-            columns=[1, 2]
+            link_sponsor(
+                "/stack/kotlin.svg",
+                const.SIN_URL,
+                "Logotipo de Kotlin"
+            ),
+            link_sponsor(
+                "/stack/csharp.svg",
+                const.SIN_URL,
+                "Logotipo de C#"
+            ),
+            link_sponsor(
+                "/stack/python.svg",
+                const.SIN_URL,
+                "Logotipo de Python"
+            ),
+            gap=Size.DEFAULT.value,
+            columns={"initial": "1", "sm": "5"}
         ),
         width="100%",
         align_items="start",
-        spacing=Size.MEDIUM.value
+        gap=Size.DEFAULT.value
     )

@@ -29,3 +29,5 @@ MIPASTELERIA_URL = "https://bsite.net/rojaslcc"
 
 # Contacto
 EMAIL = "rojaslcc@outlook.com"
+
+SIN_URL = ""
