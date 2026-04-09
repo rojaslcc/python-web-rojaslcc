@@ -10,7 +10,7 @@ from link_bio.i18n import Trans
 def sponsors() -> rx.Component:
     return rx.vstack(
         title(PageState.i18n[Trans.TITLE_MY_TECH_STACK]),
-        rx.grid(
+        rx.flex(
             link_sponsor(
                 "/stack/android.svg",
                 const.SIN_URL,
@@ -36,8 +36,8 @@ def sponsors() -> rx.Component:
                 const.SIN_URL,
                 "Logotipo de Python"
             ),
+            wrap="wrap",
             gap=Size.DEFAULT.value,
-            columns={"initial": "1", "sm": "5"}
         ),
         width="100%",
         align_items="start",
