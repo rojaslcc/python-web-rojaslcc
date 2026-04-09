@@ -36,6 +36,11 @@ def sponsors() -> rx.Component:
                 const.SIN_URL,
                 "Logotipo de Python"
             ),
+            link_sponsor(
+                "/stack/sqlserver.svg",
+                const.SIN_URL,
+                "Logotipo de SQL Server"
+            ),
             wrap="wrap",
             gap=Size.DEFAULT.value,
         ),
