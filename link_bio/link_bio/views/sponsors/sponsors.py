@@ -17,6 +17,11 @@ def sponsors() -> rx.Component:
                 "Logotipo de Android"
             ),
             link_sponsor(
+                "/stack/ios.svg",
+                const.SIN_URL,
+                "Logotipo de iOS"
+            ),
+            link_sponsor(
                 "/stack/java.svg",
                 const.SIN_URL,
                 "Logotipo de Java"
@@ -25,6 +30,11 @@ def sponsors() -> rx.Component:
                 "/stack/kotlin.svg",
                 const.SIN_URL,
                 "Logotipo de Kotlin"
+            ),
+            link_sponsor(
+                "/stack/swift.svg",
+                const.SIN_URL,
+                "Logotipo de Swift"
             ),
             link_sponsor(
                 "/stack/csharp.svg",
@@ -40,6 +50,16 @@ def sponsors() -> rx.Component:
                 "/stack/sqlserver.svg",
                 const.SIN_URL,
                 "Logotipo de SQL Server"
+            ),
+            link_sponsor(
+                "/stack/oracle.svg",
+                const.SIN_URL,
+                "Logotipo de Oracle"
+            ),
+            link_sponsor(
+                "/stack/postgresql.svg",
+                const.SIN_URL,
+                "Logotipo de PostgreSQL"
             ),
             wrap="wrap",
             gap=Size.DEFAULT.value,
