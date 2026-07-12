@@ -61,7 +61,7 @@ translations = {
         "title_contact": "Contacto",
         "link_altos_web": "Sitio web de Altos Interactive",
         "link_altos_body": "Desarrollo de software y soluciones digitales.",
-        "link_btsth_pdocastdelasemana_yt": "Pódcast \"Bruddas Tech&Solutions: Tecnología Hoy\" ⓘ Nuevo capítulo de semana.",
+        "link_btsth_pdocastdelasemana_yt": "Pódcast \"Bruddas Tech&Solutions: Tecnología Hoy\" ⓘ Nuevo capítulo cada de semana.",
         "link_btsth_pdocastdelasemana_yt_body": "Acompáñanos a desmenuzar la tecnología con un nuevo episodio cada domingo en punto de las 12 PM hora local de México.",
         "link_altos_fb_body": "Co-fundador de startup para el desarrollo de software.",
         "link_rojas_fb": "RojasLCC Tutoriales y más",
