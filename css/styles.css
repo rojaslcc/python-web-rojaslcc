@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Estilos personalizados - Amigable Developer H.R. (rojaslcc)
+   Paleta: #301A4C (Fondo), #472673 (Superficie), #3AB6A8 (Teal Acento), #236860 (Teal Oscuro)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+:root {
+  --color-bg: #301A4C;
+  --color-bg-deep: #1A0D2C;
+  --color-card: #472673;
+  --color-card-hover: #236860;
+  --color-teal: #3AB6A8;
+  --color-teal-dark: #236860;
+  --color-teal-light: #5CE1D2;
+  --color-text: #F1F2F4;
+  --color-muted: #C3C7CB;
+  --color-subtle: #A3ABB2;
+}
+
+/* Smooth Scrolling & Base */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A0D2C;
+}
+::-webkit-scrollbar-thumb {
+  background: #472673;
+  border-radius: 9999px;
+  border: 2px solid #1A0D2C;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3AB6A8;
+}
+
+/* Ambient Animated Glows */
+@keyframes ambientGlow1 {
+  0% { transform: translate(0px, 0px) scale(1); opacity: 0.45; }
+  50% { transform: translate(60px, -40px) scale(1.15); opacity: 0.65; }
+  100% { transform: translate(-40px, 50px) scale(0.95); opacity: 0.45; }
+}
+
+@keyframes ambientGlow2 {
+  0% { transform: translate(0px, 0px) scale(1.1); opacity: 0.35; }
+  50% { transform: translate(-70px, 40px) scale(0.9); opacity: 0.6; }
+  100% { transform: translate(50px, -60px) scale(1.1); opacity: 0.35; }
+}
+
+.glow-orb-1 {
+  animation: ambientGlow1 14s ease-in-out infinite alternate;
+}
+
+.glow-orb-2 {
+  animation: ambientGlow2 18s ease-in-out infinite alternate;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(71, 38, 115, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-header {
+  background: rgba(48, 26, 76, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(58, 182, 168, 0.15);
+}
+
+.glass-card {
+  background: rgba(71, 38, 115, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(35, 104, 96, 0.7);
+  border-color: rgba(58, 182, 168, 0.6);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 28px -6px rgba(58, 182, 168, 0.25), 0 0 0 1px rgba(58, 182, 168, 0.3);
+}
+
+.glass-card:hover .link-arrow {
+  transform: translateX(4px);
+  color: #3AB6A8;
+}
+
+.glass-card:hover .link-icon-container {
+  background: rgba(58, 182, 168, 0.2);
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Micro animations */
+.link-icon-container {
+  transition: all 0.3s ease;
+}
+
+.link-arrow {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Avatar Pulse Ring */
+@keyframes ringPulse {
+  0% { box-shadow: 0 0 0 0 rgba(58, 182, 168, 0.7); }
+  70% { box-shadow: 0 0 0 14px rgba(58, 182, 168, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(58, 182, 168, 0); }
+}
+
+.avatar-ring {
+  animation: ringPulse 3s infinite;
+}
+
+/* Quick Action Buttons */
+.action-btn {
+  background: rgba(71, 38, 115, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.25s ease;
+}
+
+.action-btn:hover {
+  background: #3AB6A8;
+  color: #1A0D2C;
+  border-color: #3AB6A8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(58, 182, 168, 0.4);
+}
+
+/* Filter Chip */
+.filter-chip {
+  transition: all 0.2s ease;
+}
+
+.filter-chip.active {
+  background: #3AB6A8;
+  color: #1A0D2C;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(58, 182, 168, 0.35);
+}
+
+/* Tech Stack Badges */
+.stack-badge {
+  background: rgba(71, 38, 115, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+.stack-badge:hover {
+  background: rgba(58, 182, 168, 0.18);
+  border-color: rgba(58, 182, 168, 0.6);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(58, 182, 168, 0.25);
+}
+
+/* Toast Animation */
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toast-animate {
+  animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Shimmer Highlight Effect for Featured Card */
+.featured-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(58, 182, 168, 0.15),
+    transparent
+  );
+  animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  30% { left: 200%; }
+  100% { left: 200%; }
+}
