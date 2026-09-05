@@ -3,7 +3,8 @@
 # 🌐 LinkBio • H.R. Rangel (@rojaslcc)
 ### *Amigable Developer • Hub de Enlaces, Proyectos y Contenido*
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/99131a98-333e-4340-80d4-34ef73b4e47a/deploy-status)](https://app.netlify.com/sites/rojaslcc/deploys)
+[![Deploy to Netlify](https://github.com/rojaslcc/linkbio-rojaslcc/actions/workflows/deploy_netlify.yml/badge.svg)](https://github.com/rojaslcc/linkbio-rojaslcc/actions/workflows/deploy_netlify.yml)
+[![Netlify](https://img.shields.io/badge/Netlify-Deployed-00C7B7?style=flat-square&logo=netlify&logoColor=white)](https://rojaslcc.netlify.app/)
 ![Version](https://img.shields.io/badge/version-2.0.0-3AB6A8.svg?style=flat-square)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
