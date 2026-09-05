@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H.R. Rangel (@rojaslcc) | Amigable Developer • Links & Proyectos</title>
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description"
+    content="Hola, mi nombre es H.R. Rangel, soy Lic. en Ciencias Computacionales y hago contenido de programación y tecnología. Explora mis proyectos, podcast y redes sociales.">
+  <meta name="keywords"
+    content="rojaslcc, H.R. Rangel, Programación, Desarrollador de Software, Kotlin, Android, ASP.NET, BTS Tecnología Hoy, Altos Interactive, Banregio">
+  <meta name="author" content="H.R. Rangel">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rojaslcc.netlify.app/">
+  <meta property="og:title" content="H.R. Rangel (@rojaslcc) • Amigable Developer">
+  <meta property="og:description"
+    content="Licenciado en Ciencias Computacionales y Desarrollador de Software. Enlaces a proyectos, contenido y pódcast.">
+  <meta property="og:image" content="assets/avatar.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@rojaslcc">
+  <meta name="twitter:title" content="H.R. Rangel (@rojaslcc) • Amigable Developer">
+  <meta name="twitter:description"
+    content="Licenciado en Ciencias Computacionales y Desarrollador de Software. Enlaces a proyectos, contenido y pódcast.">
+  <meta name="twitter:image" content="assets/avatar.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Google Fonts: Comfortaa & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#301A4C',
+              bgDeep: '#1A0D2C',
+              card: '#472673',
+              cardHover: '#236860',
+              teal: '#3AB6A8',
+              tealDark: '#236860',
+              tealLight: '#5CE1D2',
+              text: '#F1F2F4',
+              muted: '#C3C7CB',
+              subtle: '#A3ABB2'
+            }
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            comfortaa: ['Comfortaa', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-teal': '0 0 25px -5px rgba(58, 182, 168, 0.45)',
+            'glow-card': '0 10px 30px -10px rgba(58, 182, 168, 0.25)',
+            'glow-purple': '0 0 35px -5px rgba(71, 38, 115, 0.6)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body
+  class="bg-[#301A4C] text-[#F1F2F4] min-h-screen font-poppins relative overflow-x-hidden selection:bg-[#3AB6A8] selection:text-[#1A0D2C]">
+
+  <!-- Ambient Animated Lighting Blobs -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div class="glow-orb-1 absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#472673] filter blur-[90px] opacity-50">
+    </div>
+    <div
+      class="glow-orb-2 absolute top-1/3 -right-32 w-[28rem] h-[28rem] rounded-full bg-[#3AB6A8] filter blur-[120px] opacity-20">
+    </div>
+    <div
+      class="glow-orb-1 absolute bottom-10 left-1/4 w-[32rem] h-[32rem] rounded-full bg-[#236860] filter blur-[110px] opacity-25">
+    </div>
+  </div>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full glass-panel-header px-4 sm:px-8 py-3.5 transition-all">
+    <div class="max-w-xl mx-auto flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2 group font-comfortaa text-xl sm:text-2xl font-bold tracking-tight">
+        <img src="assets/logo.png" alt="Logo" class="w-7 h-7 object-contain transition-transform group-hover:scale-110">
+        <div>
+          <span class="text-[#3AB6A8] transition-colors group-hover:text-[#5CE1D2]">rojas</span><span
+            class="text-[#236860] group-hover:text-[#3AB6A8] transition-colors">lcc</span>
+        </div>
+      </a>
+
+      <!-- Language Switcher & Quick Share -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-[#472673]/60 rounded-full p-1 border border-white/10 shadow-inner">
+          <button id="lang-es" aria-label="Cambiar a Español" title="Español"
+            class="px-2.5 py-1 text-base rounded-full transition-all duration-200 opacity-100 scale-110 hover:opacity-100">
+            🇲🇽
+          </button>
+          <button id="lang-en" aria-label="Switch to English" title="English"
+            class="px-2.5 py-1 text-base rounded-full transition-all duration-200 opacity-40 grayscale hover:opacity-100 hover:grayscale-0">
+            🇺🇸
+          </button>
+        </div>
+
+        <!-- Direct Share Button -->
+        <button id="btn-share-profile" aria-label="Compartir perfil"
+          class="p-2 rounded-full bg-[#472673]/80 hover:bg-[#3AB6A8] text-[#F1F2F4] hover:text-[#1A0D2C] border border-white/10 transition-all duration-200 hover:scale-105 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="relative z-10 max-w-xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-6">
+
+    <!-- Profile Hero Card -->
+    <div class="glass-panel rounded-3xl p-5 sm:p-7 shadow-2xl border border-white/10 relative overflow-hidden">
+
+      <!-- Cover Banner with Gradient Fade -->
+      <div class="relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden shadow-md">
+        <img src="assets/cover.png" alt="Portada de H.R. Rangel"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#472673] via-[#472673]/40 to-transparent"></div>
+      </div>
+
+      <!-- Avatar & Profile Details -->
+      <div class="relative -mt-16 sm:-mt-20 flex flex-col sm:flex-row items-center sm:items-end gap-4 sm:gap-6 px-2">
+
+        <!-- Avatar with pulsing status indicator -->
+        <div class="relative group">
+          <div
+            class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-[#3AB6A8] via-[#5CE1D2] to-[#472673] shadow-glow-teal">
+            <img src="assets/avatar.jpg" alt="Foto de perfil de H.R. Rangel"
+              class="w-full h-full object-cover rounded-full border-2 border-[#1A0D2C]">
+          </div>
+          <!-- Live Status Dot -->
+          <span class="absolute bottom-2 right-2 flex h-5 w-5" title="Activo">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3AB6A8] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-5 w-5 bg-[#3AB6A8] border-2 border-[#301A4C]"></span>
+          </span>
+        </div>
+
+        <!-- Name & Handle -->
+        <div class="text-center sm:text-left flex-1">
+          <div class="flex items-center justify-center sm:justify-start gap-2">
+            <h1 class="text-2xl sm:text-3xl font-bold text-[#F1F2F4] font-comfortaa">H.R. Rangel</h1>
+            <svg class="w-5 h-5 text-[#3AB6A8]" fill="currentColor" viewBox="0 0 20 20" title="Verificado">
+              <path fill-rule="evenodd"
+                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <p class="text-sm sm:text-base font-medium text-[#3AB6A8] mt-0.5" data-i18n="role">@rojaslcc</p>
+          <p class="text-xs text-[#C3C7CB] flex items-center justify-center sm:justify-start gap-1.5 mt-1 font-light">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span data-i18n="statusText">Disponible para colaboraciones y proyectos</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Social Media Icon Quick Links -->
+      <div class="flex items-center justify-center gap-3 sm:gap-4 mt-6 pt-5 border-t border-white/10 flex-wrap">
+        <a href="https://github.com/rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-xl bg-white/5 hover:bg-[#3AB6A8]/20 border border-white/10 hover:border-[#3AB6A8] text-[#F1F2F4] hover:text-[#3AB6A8] transition-all hover:scale-110 shadow-sm"
+          title="GitHub">
+          <img src="assets/icons/github.svg" alt="GitHub" class="w-5 h-5">
+        </a>
+        <a href="https://x.com/rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-xl bg-white/5 hover:bg-[#3AB6A8]/20 border border-white/10 hover:border-[#3AB6A8] text-[#F1F2F4] hover:text-[#3AB6A8] transition-all hover:scale-110 shadow-sm"
+          title="Twitter / X">
+          <img src="assets/icons/x.svg" alt="Twitter / X" class="w-5 h-5">
+        </a>
+        <a href="https://instagram.com/rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-xl bg-white/5 hover:bg-[#3AB6A8]/20 border border-white/10 hover:border-[#3AB6A8] text-[#F1F2F4] hover:text-[#3AB6A8] transition-all hover:scale-110 shadow-sm"
+          title="Instagram">
+          <img src="assets/icons/instagram.svg" alt="Instagram" class="w-5 h-5">
+        </a>
+        <a href="https://tiktok.com/@rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-xl bg-white/5 hover:bg-[#3AB6A8]/20 border border-white/10 hover:border-[#3AB6A8] text-[#F1F2F4] hover:text-[#3AB6A8] transition-all hover:scale-110 shadow-sm"
+          title="TikTok">
+          <img src="assets/icons/tiktok.svg" alt="TikTok" class="w-5 h-5">
+        </a>
+        <a href="https://music.apple.com/mx/playlist/rolas-pa-programar-chidori/pl.u-XkD04oLt23NeJ9?l=en"
+          target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-xl bg-white/5 hover:bg-[#3AB6A8]/20 border border-white/10 hover:border-[#3AB6A8] text-[#F1F2F4] hover:text-[#3AB6A8] transition-all hover:scale-110 shadow-sm"
+          title="Apple Music">
+          <img src="assets/icons/apple_music.svg" alt="Apple Music" class="w-5 h-5">
+        </a>
+        <a href="https://linkedin.com/in/rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-xl bg-white/5 hover:bg-[#3AB6A8]/20 border border-white/10 hover:border-[#3AB6A8] text-[#F1F2F4] hover:text-[#3AB6A8] transition-all hover:scale-110 shadow-sm"
+          title="LinkedIn">
+          <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+        </a>
+      </div>
+
+      <!-- Quick Action Utilities (Copy, QR, vCard) -->
+      <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-white/5">
+        <button id="btn-copy-profile"
+          class="action-btn flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-medium text-[#F1F2F4]">
+          <svg class="w-4 h-4 text-[#3AB6A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+            </path>
+          </svg>
+          <span data-i18n="actionCopy">Copiar Enlace</span>
+        </button>
+        <button id="btn-qr-profile"
+          class="action-btn flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-medium text-[#F1F2F4]">
+          <svg class="w-4 h-4 text-[#3AB6A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z">
+            </path>
+          </svg>
+          <span data-i18n="actionQr">Código QR</span>
+        </button>
+        <button id="btn-vcard-profile"
+          class="action-btn flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-medium text-[#F1F2F4]">
+          <svg class="w-4 h-4 text-[#3AB6A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2">
+            </path>
+          </svg>
+          <span data-i18n="actionVcard">Guardar Contacto</span>
+        </button>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-3 gap-2 sm:gap-3 mt-4 text-center">
+        <div class="p-3 rounded-2xl bg-[#301A4C]/50 border border-white/5 shadow-inner">
+          <p class="text-lg sm:text-xl font-bold text-[#3AB6A8]">12+</p>
+          <p class="text-[11px] sm:text-xs text-[#C3C7CB] mt-0.5 leading-tight" data-i18n="statExp">años de experiencia
+          </p>
+        </div>
+        <div class="p-3 rounded-2xl bg-[#301A4C]/50 border border-white/5 shadow-inner">
+          <p class="text-lg sm:text-xl font-bold text-[#3AB6A8]">2+</p>
+          <p class="text-[11px] sm:text-xs text-[#C3C7CB] mt-0.5 leading-tight" data-i18n="statApps">apps públicas
+            creadas</p>
+        </div>
+        <div class="p-3 rounded-2xl bg-[#301A4C]/50 border border-white/5 shadow-inner">
+          <p class="text-lg sm:text-xl font-bold text-[#3AB6A8]">17K+</p>
+          <p class="text-[11px] sm:text-xs text-[#C3C7CB] mt-0.5 leading-tight" data-i18n="statFollowers">seguidores en
+            redes</p>
+        </div>
+      </div>
+
+      <!-- Bio Text -->
+      <p class="text-xs sm:text-sm text-[#C3C7CB] text-justify sm:text-left leading-relaxed mt-5 pt-4 border-t border-white/5 font-light"
+        data-i18n="bio">
+        Soy licenciado en ciencias computacionales y actualmente trabajo para Banregio como analista programador Sr.
+        Además, creo contenido sobre programación y tecnología en general en redes sociales. Aquí podrás encontrar todos
+        mis enlaces de interés ¡Bienvenid@!
+      </p>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="flex flex-col gap-3">
+      <!-- Search Input -->
+      <div class="relative w-full">
+        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#3AB6A8]">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <input type="text" id="link-search-input" placeholder="Buscar proyectos, podcasts, redes..."
+          data-i18n-placeholder="searchPlaceholder"
+          class="w-full pl-10 pr-10 py-3 rounded-2xl bg-[#472673]/60 border border-white/10 text-sm text-[#F1F2F4] placeholder-[#A3ABB2] focus:outline-none focus:border-[#3AB6A8] focus:ring-2 focus:ring-[#3AB6A8]/30 backdrop-blur-md transition-all shadow-md">
+        <button id="clear-search-btn"
+          class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#A3ABB2] hover:text-[#F1F2F4]"
+          title="Limpiar búsqueda">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
+        <button
+          class="filter-chip active px-3.5 py-1.5 rounded-full bg-[#472673]/80 border border-white/10 text-[#C3C7CB] whitespace-nowrap"
+          data-filter="all" data-i18n="filterAll">Todos</button>
+        <button
+          class="filter-chip px-3.5 py-1.5 rounded-full bg-[#472673]/80 border border-white/10 text-[#C3C7CB] whitespace-nowrap"
+          data-filter="featured" data-i18n="filterFeatured">Destacados</button>
+        <button
+          class="filter-chip px-3.5 py-1.5 rounded-full bg-[#472673]/80 border border-white/10 text-[#C3C7CB] whitespace-nowrap"
+          data-filter="community" data-i18n="filterCommunity">Comunidad</button>
+        <button
+          class="filter-chip px-3.5 py-1.5 rounded-full bg-[#472673]/80 border border-white/10 text-[#C3C7CB] whitespace-nowrap"
+          data-filter="projects" data-i18n="filterProjects">Proyectos</button>
+        <button
+          class="filter-chip px-3.5 py-1.5 rounded-full bg-[#472673]/80 border border-white/10 text-[#C3C7CB] whitespace-nowrap"
+          data-filter="stack" data-i18n="filterStack">Stack Tech</button>
+      </div>
+    </div>
+
+    <!-- Empty State for Search -->
+    <div id="no-results-state" class="hidden text-center py-10 px-4 glass-card rounded-2xl">
+      <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-[#3AB6A8]/20 flex items-center justify-center text-[#3AB6A8]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <p class="text-sm font-medium text-[#F1F2F4]" data-i18n="noResults">No se encontraron enlaces con ese criterio de
+        búsqueda.</p>
+    </div>
+
+    <!-- SECTION 1: Lo nuevo & Destacado -->
+    <section class="link-section flex flex-col gap-3">
+      <div class="flex items-center gap-2 px-1">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3AB6A8]"></span>
+        <h2 class="text-lg font-semibold text-[#F1F2F4] font-comfortaa" data-i18n="secFeatured">Lo nuevo & Destacado
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <!-- Altos Interactive Card -->
+        <a href="https://altosinteractive.com" target="_blank" rel="noopener noreferrer"
+          class="link-card-item featured-card glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="featured">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-[#3AB6A8]/10 flex items-center justify-center flex-shrink-0 border border-[#3AB6A8]/30">
+              <img src="assets/icons/web.svg" alt="Sitio Web" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2">
+                <span
+                  class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                  data-i18n="altosTitle">Sitio web de Altos Interactive</span>
+                <span
+                  class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-[#3AB6A8]/20 text-[#3AB6A8] border border-[#3AB6A8]/40 uppercase tracking-wider">Startup</span>
+              </div>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 leading-snug font-light" data-i18n="altosDesc">Desarrollo de
+                software y soluciones digitales a medida.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Podcast BTS Card -->
+        <a href="https://www.youtube.com/playlist?list=PLAoGoWicJjAFjMSkEtv61r3BeVoKR5LwG" target="_blank"
+          rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="featured">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-red-500/15 flex items-center justify-center flex-shrink-0 border border-red-500/30">
+              <img src="assets/icons/youtube.svg" alt="Podcast" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span
+                  class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                  data-i18n="podcastTitle">Pódcast "Bruddas Tech&Solutions: Tecnología Hoy"</span>
+                <span
+                  class="px-2 py-0.5 text-[10px] font-semibold rounded-full bg-red-500/20 text-red-300 border border-red-500/30"
+                  data-i18n="podcastBadge">Nuevo capítulo cada semana</span>
+              </div>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 leading-snug font-light" data-i18n="podcastDesc">Acompáñanos a
+                desmenuzar la tecnología con un nuevo episodio cada domingo 12:00 PM (Hora CDMX).</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Apple Music Playlist Card -->
+        <a id="apple-music-card"
+          href="https://music.apple.com/mx/playlist/rolas-pa-programar-chidori/pl.u-XkD04oLt23NeJ9?l=en" target="_blank"
+          rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="featured">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-pink-500/15 flex items-center justify-center flex-shrink-0 border border-pink-500/30">
+              <img src="assets/icons/apple_music.svg" alt="Apple Music" class="w-6 h-6 music-note-icon">
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2">
+                <span
+                  class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                  data-i18n="musicTitle">Rolas pa programar chidori</span>
+                <span
+                  class="px-2 py-0.5 text-[10px] font-semibold rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30">Playlist</span>
+              </div>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 leading-snug font-light" data-i18n="musicDesc">Mi playlist
+                seleccionada en Apple Music para entrar en modo flow.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Comunidad & Redes -->
+    <section class="link-section flex flex-col gap-3">
+      <div class="flex items-center gap-2 px-1">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3AB6A8]"></span>
+        <h2 class="text-lg font-semibold text-[#F1F2F4] font-comfortaa" data-i18n="secCommunity">Comunidad & Contenido
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <!-- Facebook RojasLCC -->
+        <a href="https://www.facebook.com/rojaslcc91" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="community">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-blue-600/15 flex items-center justify-center flex-shrink-0 border border-blue-500/30">
+              <img src="assets/icons/facebook.svg" alt="Facebook" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="fbMainTitle">RojasLCC Tutoriales y más</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="fbMainDesc">Mi página de Facebook principal
+                sobre código y tecnología.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Facebook BTS -->
+        <a href="https://www.facebook.com/bts.sw" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="community">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-blue-600/15 flex items-center justify-center flex-shrink-0 border border-blue-500/30">
+              <img src="assets/icons/facebook.svg" alt="Facebook BTS" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="fbBtsTitle">Bruddas Tech&Solutions</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="fbBtsDesc">Proyecto de creación de
+                contenido digital sobre software.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Facebook Altos -->
+        <a href="https://www.facebook.com/altosinteractive" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="community">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-blue-600/15 flex items-center justify-center flex-shrink-0 border border-blue-500/30">
+              <img src="assets/icons/facebook.svg" alt="Facebook Altos" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="fbAltosTitle">Altos Interactive en Facebook</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="fbAltosDesc">Co-fundador de startup para el
+                desarrollo de software.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Twitch -->
+        <a href="https://twitch.tv/rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="community">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center flex-shrink-0 border border-purple-500/30">
+              <img src="assets/icons/twitch.svg" alt="Twitch" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="twitchTitle">Canal de Twitch</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="twitchDesc">Transmisiones en vivo sobre
+                programación, software y tech.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- YouTube Personal -->
+        <a href="https://www.youtube.com/channel/UCjnVv-UB3ofo4VO33AmohZg" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="community">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-red-600/15 flex items-center justify-center flex-shrink-0 border border-red-500/30">
+              <img src="assets/icons/youtube.svg" alt="YouTube Personal" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="ytPersonalTitle">YouTube • Canal Personal</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="ytPersonalDesc">Vlogs, reflexiones y
+                experiencias de desarrollo.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- YouTube Tutoriales -->
+        <a href="https://youtube.com/@rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="community">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-red-600/15 flex items-center justify-center flex-shrink-0 border border-red-500/30">
+              <img src="assets/icons/youtube.svg" alt="YouTube Tutoriales" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="ytTutorialsTitle">YouTube • Canal de Tutoriales</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="ytTutorialsDesc">Tutoriales sobre
+                desarrollo de software y guías técnicas.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- YouTube BTS -->
+        <a href="https://www.youtube.com/@bruddastech" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="community">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-red-600/15 flex items-center justify-center flex-shrink-0 border border-red-500/30">
+              <img src="assets/icons/youtube.svg" alt="YouTube BTS" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="ytBtsTitle">YouTube • Canal BTS Pódcast</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="ytBtsDesc">Hogar oficial del pódcast BTS:
+                Tecnología Hoy.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Proyectos & Recursos -->
+    <section class="link-section flex flex-col gap-3">
+      <div class="flex items-center gap-2 px-1">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3AB6A8]"></span>
+        <h2 class="text-lg font-semibold text-[#F1F2F4] font-comfortaa" data-i18n="secProjects">Proyectos & Recursos
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <!-- Blog -->
+        <a href="https://rojaslcc91.wordpress.com" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="projects">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-cyan-600/15 flex items-center justify-center flex-shrink-0 border border-cyan-500/30">
+              <img src="assets/icons/wordpress.svg" alt="Blog" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="blogTitle">Blog Personal</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="blogDesc">Artículos, reflexiones y notas
+                sobre desarrollo y tecnología.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- App Android e-UANL -->
+        <a href="https://rojaslcc91.wordpress.com/2022/08/25/e-uanl-campus-digital-android" target="_blank"
+          rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="projects">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-green-500/15 flex items-center justify-center flex-shrink-0 border border-green-500/30">
+              <img src="assets/icons/android.svg" alt="Android App" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="appAndroidTitle">App Android e-UANL Campus Digital</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="appAndroidDesc">App móvil nativa en Kotlin
+                para mi alma mater U.A.N.L.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- App Web CLIPSI UANL -->
+        <a href="https://clipsi.uanl.mx" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="projects">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center flex-shrink-0 border border-blue-500/30">
+              <img src="assets/icons/microsoft.svg" alt="ASP.NET Web App" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="appClipsiTitle">App Web CLIPSI UANL</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="appClipsiDesc">Sistema web desarrollado en
+                ASP.NET Core para la Fac. de Psicología UANL.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- POKÉDEX Vue.js -->
+        <a href="https://rojaslcc-pokedex.netlify.app" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="projects">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center flex-shrink-0 border border-emerald-500/30">
+              <img src="assets/icons/vuejs.svg" alt="Vue.js App" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2">
+                <span
+                  class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                  data-i18n="appPokedexTitle">In Development: POKÉDEX</span>
+                <span
+                  class="px-2 py-0.5 text-[10px] font-semibold rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Vue.js</span>
+              </div>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="appPokedexDesc">Proyecto interactivo en
+                Vue.js desarrollado para Microsoft LaunchX.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- MiPasteleria ASP.NET -->
+        <a href="https://bsite.net/rojaslcc" target="_blank" rel="noopener noreferrer"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="projects">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center flex-shrink-0 border border-blue-500/30">
+              <img src="assets/icons/microsoft.svg" alt="Microsoft Tech" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="appPasteleriaTitle">App Web MiPasteleria</span>
+              <p class="text-xs text-[#C3C7CB] mt-0.5 font-light" data-i18n="appPasteleriaDesc">Proyecto de práctica en
+                ASP.NET Core, HTML5 y CSS3.</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Contacto Directo -->
+    <section class="link-section flex flex-col gap-3">
+      <div class="flex items-center gap-2 px-1">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3AB6A8]"></span>
+        <h2 class="text-lg font-semibold text-[#F1F2F4] font-comfortaa" data-i18n="secContact">Contacto Directo</h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <a href="mailto:rojaslcc@outlook.com"
+          class="link-card-item glass-card rounded-2xl p-4 flex items-center justify-between group"
+          data-category="featured">
+          <div class="flex items-center gap-3.5">
+            <div
+              class="link-icon-container w-12 h-12 rounded-xl bg-[#3AB6A8]/15 flex items-center justify-center flex-shrink-0 border border-[#3AB6A8]/30">
+              <img src="assets/icons/email.svg" alt="Email" class="w-6 h-6">
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-sm sm:text-base font-semibold text-[#F1F2F4] group-hover:text-[#5CE1D2] transition-colors"
+                data-i18n="emailTitle">Correo Electrónico</span>
+              <p class="text-xs text-[#3AB6A8] mt-0.5 font-medium" data-i18n="emailDesc">rojaslcc@outlook.com</p>
+            </div>
+          </div>
+          <div class="link-arrow text-[#A3ABB2] p-1 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Mi Stack Tech -->
+    <section class="link-section flex flex-col gap-3" data-category="stack">
+      <div class="flex items-center gap-2 px-1">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#3AB6A8]"></span>
+        <h2 class="text-lg font-semibold text-[#F1F2F4] font-comfortaa" data-i18n="secStack">Mi Stack Tecnológico</h2>
+      </div>
+
+      <div class="glass-panel rounded-3xl p-5 border border-white/10 shadow-xl">
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <!-- Android -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="Android Development">
+            <img src="assets/stack/android.svg" alt="Android"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">Android</span>
+          </div>
+
+          <!-- iOS -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="iOS Development">
+            <img src="assets/stack/ios.svg" alt="iOS"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">iOS</span>
+          </div>
+
+          <!-- Kotlin -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="Kotlin">
+            <img src="assets/stack/kotlin.svg" alt="Kotlin"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">Kotlin</span>
+          </div>
+
+          <!-- Swift -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="Swift">
+            <img src="assets/stack/swift.svg" alt="Swift"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">Swift</span>
+          </div>
+
+          <!-- C# -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="C# / .NET">
+            <img src="assets/stack/csharp.svg" alt="C#"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">C#</span>
+          </div>
+
+          <!-- Java -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="Java">
+            <img src="assets/stack/java.svg" alt="Java"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">Java</span>
+          </div>
+
+          <!-- Python -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="Python">
+            <img src="assets/stack/python.svg" alt="Python"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">Python</span>
+          </div>
+
+          <!-- SQL Server -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="Microsoft SQL Server">
+            <img src="assets/stack/sqlserver.svg" alt="SQL Server"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">SQL
+              Server</span>
+          </div>
+
+          <!-- Oracle -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="Oracle Database">
+            <img src="assets/stack/oracle.svg" alt="Oracle"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">Oracle</span>
+          </div>
+
+          <!-- PostgreSQL -->
+          <div class="stack-badge flex flex-col items-center justify-center p-3.5 rounded-2xl cursor-default group"
+            title="PostgreSQL">
+            <img src="assets/stack/postgresql.svg" alt="PostgreSQL"
+              class="h-10 w-10 object-contain transition-transform group-hover:scale-110">
+            <span
+              class="text-xs font-medium text-[#C3C7CB] group-hover:text-[#3AB6A8] mt-2 transition-colors">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="mt-8 mb-4 text-center flex flex-col items-center gap-3">
+
+      <!-- Brand Logo / Emblem -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+        <div
+          class="w-14 h-14 rounded-2xl p-2.5 bg-[#472673]/80 border border-white/10 shadow-lg group-hover:border-[#3AB6A8] group-hover:scale-105 transition-all">
+          <img src="assets/logo.png" alt="Logotipo RojasLCC" class="w-full h-full object-contain">
+        </div>
+        <p class="text-xs font-medium text-[#3AB6A8] group-hover:text-[#5CE1D2] transition-colors mt-2"
+          data-i18n="footerAppVer">Amigable Developer H.R. v2.0.0</p>
+      </a>
+
+      <!-- Copyright -->
+      <p class="text-xs text-[#A3ABB2] font-light">© 2014-2026 • H.R. Rangel</p>
+
+      <!-- Quotes -->
+      <div
+        class="max-w-md flex flex-col gap-1 text-[11px] text-[#A3ABB2] font-mono uppercase tracking-wider opacity-80 mt-1">
+        <p data-i18n="footerQuote1">SOME SEE SELF-DOUBT AS AN INVITATION TO BE GREATER.</p>
+        <p>
+          LIFE IS GOOD, BUT IT CAN BE. <span class="text-[#3AB6A8]">|</span> NEVER WASTE GOOD TECH.
+        </p>
+      </div>
+
+    </footer>
+  </main>
+
+  <!-- QR Code Modal -->
+  <div id="qr-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-md p-4 transition-opacity">
+    <div
+      class="glass-panel w-full max-w-sm rounded-3xl p-6 border border-white/15 shadow-2xl relative flex flex-col items-center text-center animate-fadeIn">
+
+      <!-- Close Button -->
+      <button
+        class="close-qr-modal absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-[#F1F2F4] transition-colors"
+        title="Cerrar">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div
+        class="w-12 h-12 rounded-2xl bg-[#3AB6A8]/20 flex items-center justify-center text-[#3AB6A8] mb-3 border border-[#3AB6A8]/40">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z">
+          </path>
+        </svg>
+      </div>
+
+      <h3 class="text-lg font-bold text-[#F1F2F4] font-comfortaa" data-i18n="qrModalTitle">Código QR del Perfil</h3>
+      <p class="text-xs text-[#C3C7CB] mt-1 mb-5" data-i18n="qrModalDesc">Escanea para abrir este perfil en cualquier
+        smartphone o tablet.</p>
+
+      <!-- QR Code Canvas / Image Container -->
+      <div class="p-3 bg-white rounded-2xl shadow-xl border-4 border-[#3AB6A8]/30 mb-5">
+        <img id="qr-code-img" src="" alt="Código QR de rojaslcc" class="w-52 h-52 object-contain">
+      </div>
+
+      <button
+        class="close-qr-modal w-full py-2.5 rounded-xl bg-[#3AB6A8] hover:bg-[#5CE1D2] text-[#1A0D2C] font-semibold text-sm transition-all shadow-glow-teal"
+        data-i18n="closeBtn">
+        Cerrar
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div id="toast-container"
+    class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4"></div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
