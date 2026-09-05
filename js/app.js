@@ -272,7 +272,7 @@ function initSearchAndFilters() {
       const matchesSearch = query === '' || textContent.includes(query);
 
       if (matchesCategory && matchesSearch) {
-        card.style.display = 'block';
+        card.style.display = '';
         visibleCount++;
       } else {
         card.style.display = 'none';
@@ -281,11 +281,27 @@ function initSearchAndFilters() {
 
     // Handle sections visibility
     document.querySelectorAll('.link-section').forEach((section) => {
-      const visibleCardsInSection = section.querySelectorAll('.link-card-item[style="display: block;"]');
-      if (visibleCardsInSection.length === 0 && query !== '') {
-        section.style.display = 'none';
+      if (section.getAttribute('data-category') === 'stack') {
+        const stackText = section.textContent.toLowerCase();
+        const matchesStackCategory = (currentCategory === 'all') || (currentCategory === 'stack');
+        const matchesStackSearch = query === '' || stackText.includes(query);
+        if (matchesStackCategory && matchesStackSearch) {
+          section.style.display = '';
+          if (query !== '' || currentCategory === 'stack') {
+            visibleCount++;
+          }
+        } else {
+          section.style.display = 'none';
+        }
       } else {
-        section.style.display = 'block';
+        const visibleCardsInSection = Array.from(section.querySelectorAll('.link-card-item')).filter(
+          (card) => card.style.display !== 'none'
+        );
+        if (visibleCardsInSection.length === 0) {
+          section.style.display = 'none';
+        } else {
+          section.style.display = '';
+        }
       }
     });
 
